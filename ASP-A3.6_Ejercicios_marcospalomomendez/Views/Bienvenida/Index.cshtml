@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Página de Bienvenida";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>¡Hola, @ViewBag.Nombre!</h1>
+        <p>Fecha y hora actual: @ViewBag.FechaActual</p>
+        <div>
+            <p>Este es un proyecto de práctica en ASP.NET Core MVC. Aquí estamos aprendiendo a usar controladores, vistas y variables simples en Razor para crear páginas web dinámicas.</p>
+        </div>
+    </div>
+</body>
+</html>

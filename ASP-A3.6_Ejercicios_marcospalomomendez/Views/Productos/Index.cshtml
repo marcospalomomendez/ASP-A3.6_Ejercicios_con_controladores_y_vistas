@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Listado de Productos";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .caro {
+            font-weight: bold;
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listado de Productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in ViewBag.Productos)
+            {
+                <tr>
+                    <td>@producto.Nombre</td>
+                    @if (producto.Precio > 50)
+                    {
+                        <td class="caro">@producto.Precio.ToString("0.00")</td>
+                    }
+                    else
+                    {
+                        <td>@producto.Precio.ToString("0.00")</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
